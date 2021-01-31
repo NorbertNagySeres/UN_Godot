@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Bonus.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/background_2.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Button_font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Scenes/Joystick.tscn" type="PackedScene" id=8]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+block_scene = ExtResource( 3 )
+bonus_scene = ExtResource( 5 )
+joystick_scene = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168.26, 320.024 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Score" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 760.0
+margin_top = 16.0
+margin_right = 953.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 7 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background_2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 760, 360 )
+texture = ExtResource( 6 )

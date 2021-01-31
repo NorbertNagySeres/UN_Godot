@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/HighScores.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Button_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Item_list_font.tres" type="DynamicFont" id=3]
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 3 )
+
+[node name="HighScores" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Names" type="ItemList" parent="."]
+margin_left = 152.0
+margin_top = 208.0
+margin_right = 416.0
+margin_bottom = 608.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scores" type="ItemList" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1104.0
+margin_top = -152.0
+margin_right = -1016.0
+margin_bottom = 248.0
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 232.0
+margin_top = -552.0
+margin_right = 584.0
+margin_bottom = -474.0
+custom_fonts/font = ExtResource( 2 )
+text = "Play Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_left = 368.0
+margin_top = 168.0
+margin_right = 465.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 3 )
+text = "Score"
+align = 1
+
+[node name="NameLabel" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 168.0
+margin_right = 280.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 3 )
+text = "Name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TodayButton" type="Button" parent="."]
+margin_left = 160.0
+margin_top = 32.0
+margin_right = 400.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 2 )
+text = "Today"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AllTimeButton" type="Button" parent="."]
+margin_left = 1088.0
+margin_top = 32.0
+margin_right = 1328.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 2 )
+text = "All Time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonthButton" type="Button" parent="."]
+margin_left = 464.0
+margin_top = 32.0
+margin_right = 704.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 2 )
+text = "Month"
+
+[node name="YearButton" type="Button" parent="."]
+margin_left = 768.0
+margin_top = 32.0
+margin_right = 1008.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 2 )
+text = "Year"
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 992.0
+margin_top = 272.0
+margin_right = 1344.0
+margin_bottom = 350.0
+custom_fonts/font = ExtResource( 2 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="TodayButton" to="." method="_on_TodayButton_pressed"]
+[connection signal="pressed" from="AllTimeButton" to="." method="_on_AllTimeButton_pressed"]
+[connection signal="pressed" from="MonthButton" to="." method="_on_MonthButton_pressed"]
+[connection signal="pressed" from="YearButton" to="." method="_on_YearButton_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]

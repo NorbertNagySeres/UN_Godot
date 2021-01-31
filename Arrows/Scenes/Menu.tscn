@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/landing_image.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="landing_image" type="Sprite" parent="."]
+position = Vector2( 760, 360 )
+texture = ExtResource( 2 )
+
+[node name="StartGameButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -248.0
+margin_top = -8.0
+margin_right = 272.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 1 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ViewHighScoresButton" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 528.0
+margin_right = 1032.0
+margin_bottom = 608.0
+custom_fonts/font = ExtResource( 1 )
+text = "Highscores"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Announcements" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 616.0
+margin_right = 1032.0
+margin_bottom = 694.0
+custom_fonts/font = ExtResource( 1 )
+text = "Announcements"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 440.0
+margin_right = 1032.0
+margin_bottom = 518.0
+custom_fonts/font = ExtResource( 1 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="ViewHighScoresButton" to="." method="_on_ViewHighScoresButton_pressed"]
+[connection signal="pressed" from="Announcements" to="." method="_on_Announcements_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]

@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Button_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Game_over.gd" type="Script" id=2]
+
+[node name="Game_over" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.782715
+margin_right = 0.782715
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.499
+anchor_top = 0.337
+anchor_right = 0.499
+anchor_bottom = 0.337
+margin_left = -174.635
+margin_top = -49.4705
+margin_right = 163.365
+margin_bottom = 50.53
+custom_fonts/font = ExtResource( 1 )
+text = "Game over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HighScore" type="Button" parent="."]
+anchor_left = 0.794
+anchor_top = 0.473
+anchor_right = 0.794
+anchor_bottom = 0.473
+margin_left = -463.937
+margin_top = 54.8216
+margin_right = 28.0629
+margin_bottom = 132.822
+custom_fonts/font = ExtResource( 1 )
+text = "Save highscore"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayAgain" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.661
+margin_top = 144.156
+margin_right = 168.339
+margin_bottom = 222.156
+custom_fonts/font = ExtResource( 1 )
+text = "Play Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 0.474
+anchor_top = 0.418
+anchor_right = 0.474
+anchor_bottom = 0.418
+margin_left = -65.4968
+margin_top = -178.514
+margin_right = 121.503
+margin_bottom = -106.514
+custom_fonts/font = ExtResource( 1 )
+align = 1
+
+[node name="NameInput" type="TextEdit" parent="."]
+margin_left = 348.0
+margin_top = 398.0
+margin_right = 672.0
+margin_bottom = 465.0
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="BackToMenuButton" type="Button" parent="."]
+margin_left = 592.0
+margin_top = 597.0
+margin_right = 927.0
+margin_bottom = 661.0
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loading" type="Label" parent="."]
+margin_left = 402.425
+margin_top = 283.941
+margin_right = 1121.43
+margin_bottom = 363.941
+custom_fonts/font = ExtResource( 1 )
+text = "Loading..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HighScore" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="BackToMenuButton" to="." method="_on_BackToMenuButton_pressed"]
